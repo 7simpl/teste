@@ -1,1 +1,34 @@
-#Aula-p5
+
+var cor;
+var posHor; //x
+var posVer; //y
+
+function setup() {
+  createCanvas(500, 500);
+  background('white');
+  posHor = 200;
+  posVer = 200;
+  cor = color(255, 0, 0); // Inicializa el color
+}
+
+function draw() {
+  fill(cor); // Rellena la figura con el color actual
+  circle(posHor, posVer, 130); // Circulo(posx, posy, diametro)
+
+  if (mouseX < posHor) {
+    posHor--;
+  } else if (mouseX > posHor) {
+    posHor++;
+  }
+
+  if (mouseY < posVer) {
+    posVer--;
+  } else if (mouseY > posVer) {
+    posVer++;
+  }
+
+  if (mouseIsPressed) {
+    cor = color(random(255), random(255), random(255)); // Cambia el color al hacer clic
+  }
+}
+
